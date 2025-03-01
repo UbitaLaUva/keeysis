@@ -85,85 +85,102 @@ app.get('/', (req, res) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Keys</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        html, body {
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            text-align: center;
             margin: 0;
             padding: 0;
-            height: 100%;
-            width: 100%;
+            height: 100vh;
             display: flex;
-            justify-content: center; /* Centrar horizontalmente */
-            align-items: center;    /* Centrar verticalmente */
-            background-color: #000; /* Fondo negro */
-            color: #fff;           /* Texto blanco */
-            font-family: 'JetBrains Mono', monospace; /* Fuente */
-            text-align: center;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            overflow: hidden;
+            flex-direction: column;
         }
-
-        .container {
-            padding: 20px;
-            border: 2px solid #09f; /* Borde azul neón */
-            border-radius: 10px;
-            box-shadow: 0 0 20px #09f; /* Sombra neón */
-            background: rgba(0, 0, 0, 0.7); /* Transparencia */
-            animation: pulse 2s infinite alternate;
-        }
-
         button {
             padding: 10px 20px;
-            margin: 10px;
+            margin: 20px;
             cursor: pointer;
-            background-color: #09f;
-            border: none;
-            color: #000;
-            border-radius: 5px;
-            transition: 0.3s ease-in-out;
         }
-
-        button:hover {
-            background-color: #0cf;
-            box-shadow: 0 0 10px #0cf;
-        }
-
         input {
             width: 300px;
             padding: 10px;
             margin: 10px;
-            border: none;
-            text-align: center;
-            background: #111;
-            color: #0cf;
-            border-radius: 5px;
-            outline: none;
-            box-shadow: 0 0 10px #09f;
         }
-
-        @keyframes pulse {
-            from {
-                box-shadow: 0 0 20px #09f;
-            }
-            to {
-                box-shadow: 0 0 30px #0cf;
-            }
+        .card {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 200px;
+            height: 200px;
+            background: lightgrey;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            transition: all 1s ease-in-out;
+            border: 2px solid rgb(255, 255, 255);
+        }
+        .background {
+            position: absolute;
+            inset: 0;
+            background-color: #4158D0;
+            background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+        }
+        .logo {
+            position: absolute;
+            right: 50%;
+            bottom: 50%;
+            transform: translate(50%, 50%);
+            transition: all 0.6s ease-in-out;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 3px;
+        }
+        .box {
+            position: absolute;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.389);
+            border-top: 2px solid rgb(255, 255, 255);
+            border-right: 1px solid white;
+            box-shadow: rgba(100, 100, 111, 0.364) -7px 7px 29px 0px;
+            transition: all 1s ease-in-out;
+        }
+        .box:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .card:hover {
+            transform: scale(1.1);
+        }
+        .card:hover .logo {
+            transform: translate(70px, -52px);
         }
     </style>
 </head>
 <body>
-<div class="container">
+<div>
     <h1>Generador de Keys</h1>
     <button onclick="generateKey()">Generar Key</button><br>
     <input type="text" id="key" readonly>
     <button onclick="copyKey()">Copiar Key</button>
 </div>
-
+<div class="card">
+  <div class="background"></div>
+  <div class="logo">Socials</div>
+  <a href="#"><div class="box" style="top: 20px; left: 20px; width: 50px; height: 50px;"></div></a>
+  <a href="#"><div class="box" style="top: 20px; right: 20px; width: 50px; height: 50px;"></div></a>
+  <a href="#"><div class="box" style="bottom: 20px; left: 20px; width: 50px; height: 50px;"></div></a>
+</div>
 <script>
     async function generateKey() {
         const response = await fetch("/generate");
         const data = await response.json();
         document.getElementById("key").value = data.key;
     }
-    
     function copyKey() {
         const keyInput = document.getElementById("key");
         keyInput.select();
@@ -172,7 +189,8 @@ app.get('/', (req, res) => {
     }
 </script>
 </body>
-</html>`;
+</html>
+`;
     res.send(htmlResponse);
 });
 
