@@ -176,6 +176,11 @@ app.get('/', (req, res) => {
                 box-shadow: 0 0 30px #0cf;
             }
         }
+
+        .social-buttons button img {
+    vertical-align: middle;
+    margin-right: 5px; /* Espaciado opcional */
+}
     </style>
 </head>
 <body>
@@ -188,7 +193,7 @@ app.get('/', (req, res) => {
 
 <div class="social-buttons">
     <button onclick="window.open('https://discord.com', '_blank')">
-    <img src="img\discord-logo.png" alt="Logo Discord" width="20" height="20">
+    <img src="img\discord-logo.png" alt="" width="20" height="20">
     Discord
 </button>
     <button onclick="window.open('https://www.youtube.com', '_blank')">YouTube</button>
