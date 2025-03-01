@@ -158,19 +158,18 @@ app.get('/', (req, res) => {
     <button onclick="generateKey()">Generar Key</button><br>
     <input type="text" id="key" readonly>
     <button onclick="copyKey()">Copiar Key</button>
-
-    <div class="ad-container" style="margin-top: 20px; text-align: center;">
-        <script type="text/javascript">
-            atOptions = {
-                'key': 'd3566c394d8e84b8adf54366869f2054',
-                'format': 'iframe',
-                'height': 250,
-                'width': 300,
-                'params': {}
-            };
-        </script>
-        <script type="text/javascript" src="//www.highperformanceformat.com/d3566c394d8e84b8adf54366869f2054/invoke.js"></script>
-    </div>
+</div>
+<div class="ad-container" style="position: absolute; top: 20px; left: 20px; width: 300px; height: 250px; box-shadow: 0 0 20px #09f; border: 2px solid #09f; padding: 10px; border-radius: 10px; background: rgba(0, 0, 0, 0.7);">
+    <script type="text/javascript">
+        atOptions = {
+            'key': 'd3566c394d8e84b8adf54366869f2054',
+            'format': 'iframe',
+            'height': 250,
+            'width': 300,
+            'params': {}
+        };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/d3566c394d8e84b8adf54366869f2054/invoke.js"></script>
 </div>
 <script>
     async function generateKey() {
