@@ -85,56 +85,92 @@ app.get('/', (req, res) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Keys</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: center;    /* Centrar verticalmente */
+            background-color: #000; /* Fondo negro */
+            color: #fff;           /* Texto blanco */
+            font-family: 'JetBrains Mono', monospace; /* Fuente */
             text-align: center;
-            margin-top: 100px;
         }
+
+        .container {
+            padding: 20px;
+            border: 2px solid #09f; /* Borde azul neón */
+            border-radius: 10px;
+            box-shadow: 0 0 20px #09f; /* Sombra neón */
+            background: rgba(0, 0, 0, 0.7); /* Transparencia */
+            animation: pulse 2s infinite alternate;
+        }
+
         button {
             padding: 10px 20px;
-            margin: 20px;
+            margin: 10px;
             cursor: pointer;
+            background-color: #09f;
+            border: none;
+            color: #000;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
         }
+
+        button:hover {
+            background-color: #0cf;
+            box-shadow: 0 0 10px #0cf;
+        }
+
         input {
             width: 300px;
             padding: 10px;
             margin: 10px;
+            border: none;
+            text-align: center;
+            background: #111;
+            color: #0cf;
+            border-radius: 5px;
+            outline: none;
+            box-shadow: 0 0 10px #09f;
         }
 
-        html, body {
-    margin: 0;        
-    padding: 0;       
-    height: 100%;     
-    width: 100%;      
-    overflow: hidden; 
-    background-color: #000; /* Fondo negro */
-    color: #fff; /* Texto blanco para mejor contraste */
-}
-
+        @keyframes pulse {
+            from {
+                box-shadow: 0 0 20px #09f;
+            }
+            to {
+                box-shadow: 0 0 30px #0cf;
+            }
+        }
     </style>
 </head>
 <body>
 <div class="container">
-<h1>Generador de Keys2</h1>
-    <button submit onclick="generateKey()">Generar Key</button><br>
+    <h1>Generador de Keys</h1>
+    <button onclick="generateKey()">Generar Key</button><br>
     <input type="text" id="key" readonly>
     <button onclick="copyKey()">Copiar Key</button>
-    <script>
-        async function generateKey() {
-            const response = await fetch("/generate");
-            const data = await response.json();
-            document.getElementById("key").value = data.key;
-        }
-        function copyKey() {
-            const keyInput = document.getElementById("key");
-            keyInput.select();
-            document.execCommand("copy");
-            alert("Key copiada al portapapeles");
-        }
-    </script>
 </div>
+
+<script>
+    async function generateKey() {
+        const response = await fetch("/generate");
+        const data = await response.json();
+        document.getElementById("key").value = data.key;
+    }
     
+    function copyKey() {
+        const keyInput = document.getElementById("key");
+        keyInput.select();
+        document.execCommand("copy");
+        alert("Key copiada al portapapeles");
+    }
+</script>
 </body>
 </html>`;
     res.send(htmlResponse);
