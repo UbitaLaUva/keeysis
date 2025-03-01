@@ -195,8 +195,9 @@ app.get('/', (req, res) => {
 
 <div class="social-buttons">
     <button onclick="window.open('https://discord.com', '_blank')">
-    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/discord-logo.png" alt="discord-logo"/></button>
-    <button onclick="window.open('https://www.youtube.com', '_blank')">YouTube</button>
+    <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/discord-logo.png" alt="discord-logo"/></button>
+    <button onclick="window.open('https://www.youtube.com', '_blank')">
+    <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/youtube-play.png" alt="youtube-play"/></button>
     <button onclick="window.open('https://www.paypal.com', '_blank')">PayPal</button>
 </div>
 
