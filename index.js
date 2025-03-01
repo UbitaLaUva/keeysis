@@ -86,7 +86,7 @@ app.get('/', (req, res) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Keys</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel="icon" href="img/LogoExploitrIcon2.ico" type="image/x-icon">
     <style>
         html, body {
             margin: 0;
@@ -196,9 +196,8 @@ app.get('/', (req, res) => {
 <div class="social-buttons">
     <button onclick="window.open('https://discord.com', '_blank')">
     <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/discord-logo.png" alt="discord-logo"/></button>
-    <button onclick="window.open('https://www.youtube.com', '_blank')">
+    <button onclick="window.open('https://www.youtube.com/@ubitaexploit', '_blank')">
     <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/youtube-play.png" alt="youtube-play"/></button>
-    <button onclick="window.open('https://www.paypal.com', '_blank')">PayPal</button>
 </div>
 
 <script>
