@@ -177,10 +177,6 @@ app.get('/', (req, res) => {
             }
         }
 
-        .social-buttons button img {
-    vertical-align: middle;
-    margin-right: 5px; /* Espaciado opcional */
-}
     </style>
 </head>
 <body>
@@ -192,8 +188,8 @@ app.get('/', (req, res) => {
 </div>
 
 <div class="social-buttons">
-    
-    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/discord-logo.png" alt="discord-logo"/ onclick="window.open('https://discord.gg/TXjtDxSnf2', '_blank')>
+    <button onclick="window.open('https://discord.gg/TXjtDxSnf2', '_blank')">
+    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/discord-logo.png" alt="discord-logo"/ onclick="window.open('https://discord.gg/TXjtDxSnf2', '_blank')></button>
     <button onclick="window.open('https://www.youtube.com', '_blank')">YouTube</button>
     <button onclick="window.open('https://www.paypal.com', '_blank')">PayPal</button>
 </div>
