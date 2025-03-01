@@ -22,17 +22,21 @@ async function createConnection() {
         password: "wF$KMi&t/M0",
         database: "u972882902_keySistem",
     });
+    
 }
+
+
 
 async function generateAndStoreKey() {
     let connection;
     try {
         const key = crypto.randomBytes(16).toString('hex');
-        const expiration = new Date(Date.now() + 12 * 60 * 60 * 1000);
+        const expiration = new Date(Date.now() + 12 * 60 * 60 * 1000); // 12 horas
         console.log(`Generando key: ${key} con expiración: ${expiration}`);
 
         connection = await createConnection();
         console.log(`Conectado a la base de datos`);
+        console.log(`Ejecutando consulta: INSERT INTO claves (key_value, expiration) VALUES ('${key}', '${expiration.toISOString()}')`);
 
         await connection.execute('INSERT INTO claves (key_value, expiration) VALUES (?, ?)', [key, expiration]);
         console.log('Key insertada correctamente');
@@ -47,6 +51,7 @@ async function generateAndStoreKey() {
     }
 }
 
+// Generar automáticamente una nueva clave cada 12 horas
 async function scheduleKeyGeneration() {
     const { key } = await generateAndStoreKey();
     console.log(`Nueva key generada: ${key}`);
@@ -116,6 +121,7 @@ app.get('/', (req, res) => {
             color: #000;
             border-radius: 5px;
             transition: 0.3s ease-in-out;
+            font-family: 'JetBrains Mono', monospace;
         }
 
         button:hover {
@@ -127,12 +133,41 @@ app.get('/', (req, res) => {
             width: 300px;
             padding: 10px;
             margin: 10px;
+            border: none;
             text-align: center;
             background: #111;
             color: #fff;
             border-radius: 5px;
+            outline: none;
             box-shadow: 0 0 10px #09f;
+            font-family: 'JetBrains Mono', monospace;
         }
+
+        .social-buttons {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .social-buttons button {
+    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px;
+    border: 2px solid #09f; /* Borde azul */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'JetBrains Mono', monospace;
+    box-shadow: 0 0 10px #09f; /* Sombra luminosa */
+}
+
+        .social-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo más oscuro al pasar el cursor */
+    box-shadow: 0 0 20px #0cf; /* Efecto de sombra */
+}
 
         @keyframes pulse {
             from {
@@ -142,7 +177,14 @@ app.get('/', (req, res) => {
                 box-shadow: 0 0 30px #0cf;
             }
         }
+
+ .social-buttons button img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
     </style>
+    
 </head>
 <body>
 <div class="container">
@@ -150,14 +192,22 @@ app.get('/', (req, res) => {
     <button onclick="generateKey()">Generar Key</button><br>
     <input type="text" id="key" readonly>
     <button onclick="copyKey()">Copiar Key</button>
-    <script type="text/javascript" src="//www.highperformanceformat.com/d3566c394d8e84b8adf54366869f2054/invoke.js"></script>
 </div>
+
+<div class="social-buttons">
+    <button onclick="window.open('https://discord.com', '_blank')">
+    <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/discord-logo.png" alt="discord-logo"/></button>
+    <button onclick="window.open('https://www.youtube.com/@ubitaexploit', '_blank')">
+    <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/youtube-play.png" alt="youtube-play"/></button>
+</div>
+
 <script>
     async function generateKey() {
         const response = await fetch("/generate");
         const data = await response.json();
         document.getElementById("key").value = data.key;
     }
+    
     function copyKey() {
         const keyInput = document.getElementById("key");
         keyInput.select();
@@ -166,7 +216,8 @@ app.get('/', (req, res) => {
     }
 </script>
 </body>
-</html>`;
+</html>
+`;
     res.send(htmlResponse);
 });
 
