@@ -86,6 +86,7 @@ app.get('/', (req, res) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Keys</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
     <style>
         html, body {
             margin: 0;
@@ -186,8 +187,7 @@ app.get('/', (req, res) => {
 </div>
 
 <div class="social-buttons">
-    <button onclick="window.open('https://discord.com', '_blank')">Discord</button>
-    <i class="fi fi-brands-discord" onclick="window.open('https://discord.com', '_blank')></i>
+    <button class="fi fi-brands-discord" onclick="window.open('https://discord.com', '_blank')"></button>
     <button onclick="window.open('https://www.youtube.com', '_blank')">YouTube</button>
     <button onclick="window.open('https://www.paypal.com', '_blank')">PayPal</button>
 </div>
