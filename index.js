@@ -183,7 +183,7 @@ app.get('/', (req, res) => {
     height: 20px;
     margin-right: 10px;
     vertical-align: middle;
-    filter: invert(1); /* Para cambiar el logo a blanco si es negro */
+    
 }
     </style>
 </head>
