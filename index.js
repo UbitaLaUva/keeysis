@@ -1,3 +1,6 @@
+
+
+
 const express = require('express');
 const crypto = require('crypto');
 const cors = require('cors');
@@ -22,10 +25,7 @@ async function createConnection() {
         password: "wF$KMi&t/M0",
         database: "u972882902_keySistem",
     });
-    
 }
-
-
 
 async function generateAndStoreKey() {
     let connection;
@@ -51,7 +51,6 @@ async function generateAndStoreKey() {
     }
 }
 
-// Generar automáticamente una nueva clave cada 12 horas
 async function scheduleKeyGeneration() {
     const { key } = await generateAndStoreKey();
     console.log(`Nueva key generada: ${key}`);
@@ -143,32 +142,6 @@ app.get('/', (req, res) => {
             font-family: 'JetBrains Mono', monospace;
         }
 
-        .social-buttons {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-        }
-
-        .social-buttons button {
-    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
-    color: #fff; /* Color del texto */
-    padding: 10px 20px;
-    border: 2px solid #09f; /* Borde azul */
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-family: 'JetBrains Mono', monospace;
-    box-shadow: 0 0 10px #09f; /* Sombra luminosa */
-}
-
-        .social-buttons button:hover {
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo más oscuro al pasar el cursor */
-    box-shadow: 0 0 20px #0cf; /* Efecto de sombra */
-}
-
         @keyframes pulse {
             from {
                 box-shadow: 0 0 20px #09f;
@@ -177,37 +150,35 @@ app.get('/', (req, res) => {
                 box-shadow: 0 0 30px #0cf;
             }
         }
-
- .social-buttons button img {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-}
     </style>
-    
 </head>
 <body>
-<div class="container">
+div class="container">
     <h1>Key UbitaExploit</h1>
     <button onclick="generateKey()">Generar Key</button><br>
     <input type="text" id="key" readonly>
     <button onclick="copyKey()">Copiar Key</button>
-</div>
 
-<div class="social-buttons">
-    <button onclick="window.open('https://discord.com', '_blank')">
-    <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/discord-logo.png" alt="discord-logo"/></button>
-    <button onclick="window.open('https://www.youtube.com/@ubitaexploit', '_blank')">
-    <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/youtube-play.png" alt="youtube-play"/></button>
+    <div class="ad-container" style="margin-top: 20px; text-align: center;">
+        <script type="text/javascript">
+            atOptions = {
+                'key': 'd3566c394d8e84b8adf54366869f2054',
+                'format': 'iframe',
+                'height': 250,
+                'width': 300,
+                'params': {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/d3566c394d8e84b8adf54366869f2054/invoke.js"></script>
+    </div>
 </div>
-
 <script>
     async function generateKey() {
         const response = await fetch("/generate");
         const data = await response.json();
         document.getElementById("key").value = data.key;
     }
-    
+
     function copyKey() {
         const keyInput = document.getElementById("key");
         keyInput.select();
@@ -216,8 +187,7 @@ app.get('/', (req, res) => {
     }
 </script>
 </body>
-</html>
-`;
+</html>`;
     res.send(htmlResponse);
 });
 
