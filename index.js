@@ -10,40 +10,10 @@ const port = process.env.PORT || 3000;
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type', 'X-Custom-Referer']
+    allowedHeaders: ['Content-Type']
 }));
 
 app.use(express.json());
-
-// Middleware para verificar cabecera personalizada
-app.use((req, res, next) => {
-    const customReferer = req.get('X-Custom-Referer');
-    const allowedReferer = 'https://lootdest.org/s?XixXQB1d';
-
-    if (customReferer === allowedReferer) {
-        next();
-    } else if (req.originalUrl === '/') {
-        const htmlResponse = `
-        <!DOCTYPE html>
-        <html lang="es">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Acceso Denegado</title>
-            <script>
-                alert("Pasa primero por ${allowedReferer} para poder acceder");
-                window.location.href = "${allowedReferer}";
-            </script>
-        </head>
-        <body>
-        </body>
-        </html>
-        `;
-        res.send(htmlResponse);
-    } else {
-        next();
-    }
-});
 
 async function createConnection() {
     return await mysql.createConnection({
@@ -83,6 +53,30 @@ async function scheduleKeyGeneration() {
 
 scheduleKeyGeneration();
 
+app.use((req, res, next) => {
+    const referer = req.get('referer');
+    const allowedReferer = 'https://lootdest.org/s?XixXQB1d';
+    if (referer === allowedReferer) {
+        next();
+    } else if (req.originalUrl === '/') {
+        res.send(`<!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Acceso Denegado</title>
+            <script>
+                alert("Pasa primero por ${allowedReferer} para poder acceder");
+                window.location.href = "${allowedReferer}";
+            </script>
+        </head>
+        <body></body>
+        </html>`);
+    } else {
+        next();
+    }
+});
+
 app.get('/generate', async (req, res) => {
     const { key } = await generateAndStoreKey();
     res.json({ key });
@@ -120,9 +114,7 @@ app.get('/', (req, res) => {
 <button onclick="copyKey()">Copiar Key</button>
 <script>
     async function generateKey() {
-        const response = await fetch("/generate", {
-            headers: { 'X-Custom-Referer': '${allowedReferer}' }
-        });
+        const response = await fetch("/generate");
         const data = await response.json();
         document.getElementById("key").value = data.key;
     }
