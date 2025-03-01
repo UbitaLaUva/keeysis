@@ -184,7 +184,11 @@ app.get('/', (req, res) => {
     vertical-align: middle;
 }
     </style>
-    <script>
+    
+</head>
+<body>
+
+<script>
   document.addEventListener("DOMContentLoaded", function () {
     const allowedReferer = "https://lootdest.org/s?XixXQB1d";
     const referer = document.referrer;
@@ -195,8 +199,6 @@ app.get('/', (req, res) => {
     }
   });
 </script>
-</head>
-<body>
 <div class="container">
     <h1>Key UbitaExploit</h1>
     <button onclick="generateKey()">Generar Key</button><br>
