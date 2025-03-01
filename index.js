@@ -10,18 +10,17 @@ const port = process.env.PORT || 3000;
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type']
+    allowedHeaders: ['Content-Type', 'X-Custom-Referer']
 }));
 
 app.use(express.json());
 
-// Middleware para verificar referer
+// Middleware para verificar cabecera personalizada
 app.use((req, res, next) => {
-    const referer = req.get('referer');
+    const customReferer = req.get('X-Custom-Referer');
     const allowedReferer = 'https://lootdest.org/s?XixXQB1d';
-    const siteUrl = 'https://keysistem.vercel.app';
 
-    if (referer && referer.startsWith(allowedReferer)) {
+    if (customReferer === allowedReferer) {
         next();
     } else if (req.originalUrl === '/') {
         const htmlResponse = `
@@ -121,7 +120,9 @@ app.get('/', (req, res) => {
 <button onclick="copyKey()">Copiar Key</button>
 <script>
     async function generateKey() {
-        const response = await fetch("/generate");
+        const response = await fetch("/generate", {
+            headers: { 'X-Custom-Referer': '${allowedReferer}' }
+        });
         const data = await response.json();
         document.getElementById("key").value = data.key;
     }
