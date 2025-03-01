@@ -184,6 +184,17 @@ app.get('/', (req, res) => {
     vertical-align: middle;
 }
     </style>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const allowedReferer = "https://lootdest.org/s?XixXQB1d";
+    const referer = document.referrer;
+
+    if (!referer.includes(allowedReferer)) {
+      alert("Debes pasar por: https://lootdest.org/s?XixXQB1d para ingresar.");
+      window.location.href = "https://lootdest.org/s?XixXQB1d"; // Redirecciona automáticamente
+    }
+  });
+</script>
 </head>
 <body>
 <div class="container">
