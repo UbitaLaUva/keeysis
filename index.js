@@ -102,6 +102,22 @@ app.get('/', (req, res) => {
             margin: 10px;
         }
 
+        html, body {
+    margin: 0;        /* Elimina márgenes */
+    padding: 0;       /* Elimina padding */
+    height: 100%;     /* Asegura que toda la pantalla se utilice */
+    width: 100%;      /* Asegura que ocupe todo el ancho */
+    overflow: hidden; /* Evita barras de desplazamiento innecesarias */
+}
+
+.container {
+    position: absolute; /* Para que no dependa del contenido */
+    width: 100%;        /* 100% del ancho */
+    height: 100%;       /* 100% de la altura */
+    top: 0;             /* Alineado arriba */
+    left: 0;            /* Alineado a la izquierda */
+}
+
         /* From Uiverse.io by SelfMadeSystem */ 
 /*
 More comprehensive version at shenanigans.shoghisimon.ca/collection/css-rain-bg/
