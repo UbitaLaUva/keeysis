@@ -86,7 +86,7 @@ app.get('/', (req, res) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Keys</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="img/LogoExploitrIcon2.ico" type="image/x-icon">
+    <link rel="icon" href="img\LogoExploitrIcon2.ico" type="image/x-icon">
     <style>
         html, body {
             margin: 0;
