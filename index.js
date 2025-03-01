@@ -153,20 +153,21 @@ app.get('/', (req, res) => {
         }
 
         .social-buttons button {
-            background-color: #09f;
-            color: #000;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-            font-family: 'JetBrains Mono', monospace;
-        }
+    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px;
+    border: 2px solid #09f; /* Borde azul */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'JetBrains Mono', monospace;
+    box-shadow: 0 0 10px #09f; /* Sombra luminosa */
+}
 
         .social-buttons button:hover {
-            background-color: #0cf;
-            box-shadow: 0 0 10px #0cf;
-        }
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo más oscuro al pasar el cursor */
+    box-shadow: 0 0 20px #0cf; /* Efecto de sombra */
+}
 
         @keyframes pulse {
             from {
@@ -177,6 +178,13 @@ app.get('/', (req, res) => {
             }
         }
 
+ .social-buttons button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    filter: invert(1); /* Para cambiar el logo a blanco si es negro */
+}
     </style>
 </head>
 <body>
@@ -188,8 +196,10 @@ app.get('/', (req, res) => {
 </div>
 
 <div class="social-buttons">
-    <button onclick="window.open('https://discord.gg/TXjtDxSnf2', '_blank')">
-    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/discord-logo.png" alt="discord-logo"/ onclick="window.open('https://discord.gg/TXjtDxSnf2', '_blank')> </button>
+    <button onclick="window.open('https://discord.com', '_blank')">
+    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/discord-logo.png" alt="discord-logo"/>
+    Discord
+</button>
     <button onclick="window.open('https://www.youtube.com', '_blank')">YouTube</button>
     <button onclick="window.open('https://www.paypal.com', '_blank')">PayPal</button>
 </div>
