@@ -134,7 +134,7 @@ app.get('/', (req, res) => {
             border: none;
             text-align: center;
             background: #111;
-            color: #0cf;
+            color: #fff;
             border-radius: 5px;
             outline: none;
             box-shadow: 0 0 10px #09f;
