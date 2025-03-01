@@ -187,6 +187,7 @@ app.get('/', (req, res) => {
 
 <div class="social-buttons">
     <button onclick="window.open('https://discord.com', '_blank')">Discord</button>
+    <i class="fi fi-brands-discord" onclick="window.open('https://discord.com', '_blank')></i>
     <button onclick="window.open('https://www.youtube.com', '_blank')">YouTube</button>
     <button onclick="window.open('https://www.paypal.com', '_blank')">PayPal</button>
 </div>
