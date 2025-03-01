@@ -7,19 +7,7 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-const allowedReferer = 'https://lootdest.org/s?XixXQB1d';
-
-app.use((req, res, next) => {
-    const referer = req.headers.referer || '';
-    if (referer.includes(allowedReferer)) {
-        next();
-    } else {
-        res.send(`
-            <h1>Acceso denegado</h1>
-            <p>Debes pasar primero por <a href="${allowedReferer}" target="_blank">Lootdest</a>.</p>
-        `);
-    }
-});
+const allowedToken = 'XixXQB1d'; // Token único que usará Lootdest
 
 app.use(cors({
     origin: '*',
@@ -65,6 +53,18 @@ async function scheduleKeyGeneration() {
 }
 
 scheduleKeyGeneration();
+
+app.use((req, res, next) => {
+    const token = req.query.token;
+    if (token === allowedToken) {
+        next();
+    } else {
+        res.send(`
+            <h1>Acceso denegado</h1>
+            <p>Debes pasar primero por <a href="https://lootdest.org/s?XixXQB1d" target="_blank">Lootdest</a>.</p>
+        `);
+    }
+});
 
 app.get('/generate', async (req, res) => {
     const { key } = await generateAndStoreKey();
