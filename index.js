@@ -153,7 +153,7 @@ app.get('/', (req, res) => {
     </style>
 </head>
 <body>
-div class="container">
+<div class="container">
     <h1>Key UbitaExploit</h1>
     <button onclick="generateKey()">Generar Key</button><br>
     <input type="text" id="key" readonly>
