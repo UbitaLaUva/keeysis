@@ -120,6 +120,7 @@ app.get('/', (req, res) => {
             color: #000;
             border-radius: 5px;
             transition: 0.3s ease-in-out;
+            font-family: 'JetBrains Mono', monospace;
         }
 
         button:hover {
@@ -138,6 +139,7 @@ app.get('/', (req, res) => {
             border-radius: 5px;
             outline: none;
             box-shadow: 0 0 10px #09f;
+            font-family: 'JetBrains Mono', monospace;
         }
 
         .social-buttons {
@@ -157,6 +159,7 @@ app.get('/', (req, res) => {
             border-radius: 5px;
             cursor: pointer;
             transition: 0.3s;
+            font-family: 'JetBrains Mono', monospace;
         }
 
         .social-buttons button:hover {
