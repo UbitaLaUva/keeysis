@@ -22,10 +22,7 @@ async function createConnection() {
         password: "wF$KMi&t/M0",
         database: "u972882902_keySistem",
     });
-    
 }
-
-
 
 async function generateAndStoreKey() {
     let connection;
@@ -36,8 +33,6 @@ async function generateAndStoreKey() {
 
         connection = await createConnection();
         console.log(`Conectado a la base de datos`);
-        console.log(`Ejecutando consulta: INSERT INTO claves (key_value, expiration) VALUES ('${key}', '${expiration.toISOString()}')`);
-
         await connection.execute('INSERT INTO claves (key_value, expiration) VALUES (?, ?)', [key, expiration]);
         console.log('Key insertada correctamente');
         return { key, expiration };
@@ -51,7 +46,6 @@ async function generateAndStoreKey() {
     }
 }
 
-// Generar automáticamente una nueva clave cada 12 horas
 async function scheduleKeyGeneration() {
     const { key } = await generateAndStoreKey();
     console.log(`Nueva key generada: ${key}`);
@@ -86,7 +80,6 @@ app.get('/', (req, res) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Keys</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="img/LogoExploitrIcon2.png" type="image/x-icon">
     <style>
         html, body {
             margin: 0;
@@ -94,120 +87,87 @@ app.get('/', (req, res) => {
             height: 100%;
             width: 100%;
             display: flex;
-            justify-content: center; 
-            align-items: center;    
-            background-color: #000; 
-            color: #fff;           
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
             font-family: 'JetBrains Mono', monospace;
             text-align: center;
-            position: relative;
         }
-
         .container {
             padding: 20px;
             border: 2px solid #09f;
             border-radius: 10px;
-            box-shadow: 0 0 20px #09f;
             background: rgba(0, 0, 0, 0.7);
-            animation: pulse 2s infinite alternate;
+            box-shadow: 0 0 20px #09f;
         }
-
         button {
             padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
             background-color: #09f;
-            border: none;
             color: #000;
+            border: none;
             border-radius: 5px;
-            transition: 0.3s ease-in-out;
-            font-family: 'JetBrains Mono', monospace;
+            cursor: pointer;
+            transition: 0.3s;
         }
-
         button:hover {
             background-color: #0cf;
-            box-shadow: 0 0 10px #0cf;
         }
-
         input {
             width: 300px;
             padding: 10px;
-            margin: 10px;
-            border: none;
             text-align: center;
             background: #111;
             color: #fff;
-            border-radius: 5px;
-            outline: none;
+            border: none;
             box-shadow: 0 0 10px #09f;
-            font-family: 'JetBrains Mono', monospace;
         }
-
-        .social-buttons {
+        #adblock-detected {
+            display: none;
+            color: red;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .adsbygoogle {
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
             position: absolute;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
+            visibility: hidden;
         }
-
-        .social-buttons button {
-    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
-    color: #fff; /* Color del texto */
-    padding: 10px 20px;
-    border: 2px solid #09f; /* Borde azul */
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-family: 'JetBrains Mono', monospace;
-    box-shadow: 0 0 10px #09f; /* Sombra luminosa */
-}
-
-        .social-buttons button:hover {
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo más oscuro al pasar el cursor */
-    box-shadow: 0 0 20px #0cf; /* Efecto de sombra */
-}
-
-        @keyframes pulse {
-            from {
-                box-shadow: 0 0 20px #09f;
-            }
-            to {
-                box-shadow: 0 0 30px #0cf;
-            }
-        }
-
- .social-buttons button img {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-}
     </style>
-    
 </head>
 <body>
 <div class="container">
+    <div id="adblock-detected">Por favor desactiva AdBlock para generar la Key.</div>
+    <div id="ad-container" class="adsbygoogle"></div>
     <h1>Key UbitaExploit</h1>
     <button onclick="generateKey()">Generar Key</button><br>
     <input type="text" id="key" readonly>
     <button onclick="copyKey()">Copiar Key</button>
 </div>
-
-<div class="social-buttons">
-    <button onclick="window.open('https://discord.com', '_blank')">
-    <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/discord-logo.png" alt="discord-logo"/></button>
-    <button onclick="window.open('https://www.youtube.com/@ubitaexploit', '_blank')">
-    <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/youtube-play.png" alt="youtube-play"/></button>
-</div>
-
 <script>
+    window.onload = function () {
+        const adContainer = document.getElementById("ad-container");
+        const adblockMessage = document.getElementById("adblock-detected");
+
+        if (window.getComputedStyle(adContainer).display === "none" || adContainer.offsetHeight === 0) {
+            adblockMessage.style.display = "block";
+            document.querySelector("button").disabled = true;
+        }
+    };
+
     async function generateKey() {
+        const adblockMessage = document.getElementById("adblock-detected");
+        if (adblockMessage.style.display === "block") {
+            alert("Debes desactivar AdBlock para generar la Key");
+            return;
+        }
         const response = await fetch("/generate");
         const data = await response.json();
         document.getElementById("key").value = data.key;
     }
-    
+
     function copyKey() {
         const keyInput = document.getElementById("key");
         keyInput.select();
@@ -216,8 +176,7 @@ app.get('/', (req, res) => {
     }
 </script>
 </body>
-</html>
-`;
+</html>`;
     res.send(htmlResponse);
 });
 
