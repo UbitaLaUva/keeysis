@@ -207,14 +207,60 @@ app.get('/', (req, res) => {
             window.open("https://priesthardshipwillow.com/qy1pzy07v?key=f233f204409d021670a6e42752865ae3", "_blank");
         }
     </script>
-    <script> 
-// Disable right-click
-    document.addEventListener("contextmenu", function (event) {
-        event.preventDefault();
+
+    <script>
+  (function () {
+    async function detectAdBlock() {
+        const bait = document.createElement("div");
+        bait.className = "adsbox ad-banner ad-unit"; // Clases comunes bloqueadas por AdBlock
+        Object.assign(bait.style, {
+            width: "1px",
+            height: "1px",
+            position: "absolute",
+            left: "-9999px",
+            visibility: "hidden"
+        });
+        document.body.appendChild(bait);
+
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                const isBlocked = bait.offsetParent === null || window.getComputedStyle(bait).display === "none";
+                bait.remove();
+                resolve(isBlocked);
+            }, 100);
+        });
+    }
+
+    function showAdblockPopup() {
+        const overlay = document.createElement("div");
+        overlay.id = "adblock-overlay";
+        Object.assign(overlay.style, {
+            position: "fixed",
+            top: "0",
+            left: "0",
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: "9999"
+        });
+
+        overlay.innerHTML = 
+            <div style="display: flex; flex-direction: column; align-items: center; padding: 20px; text-align: center; max-width: 500px; border-radius: 10px; min-height: 250px; font-size: 1.2em; font-family: system-ui; border: 5px solid #b3b3b3; background: #ffffff; color: black;">
+                <><h2 style="margin: 0 0 15px; font-weight: 700;">AdBlocker Detected!</h2><p>We rely on ads to keep our website free. Please disable your ad blocker or whitelist our site.</p><button id="refresh-page" style="padding: 10px 20px; font-size: 16px; cursor: pointer; background: #1a73e8; color: white; border: none; border-radius: 10px; margin-top: 15px;">I Disabled AdBlock</button></>
+            </div>;
+        document.body.appendChild(overlay);
+
+        document.getElementById("refresh-page").onclick = () => location.reload();
+    }
+
+    window.addEventListener("load", async () => {
+        const adBlockDetected = await detectAdBlock();
+        if (adBlockDetected) showAdblockPopup();
     });
-</script>
-<script>
-var _0x34f6=["\x61\x64\x73","\x63\x6C\x61\x73\x73\x4E\x61\x6D\x65","\x73\x74\x79\x6C\x65","\x62\x6C\x6F\x63\x6B","\x61\x70\x70\x65\x6E\x64\x43\x68\x69\x6C\x64","\x6F\x66\x66\x73\x65\x74\x48\x65\x69\x67\x68\x74","\x30","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x3C\x68\x32\x3E\x44\x65\x73\x61\x63\x74\x69\x76\x61\x20\x41\x64\x42\x6C\x6F\x63\x6B\x20\x70\x61\x72\x61\x20\x63\x6F\x6E\x74\x69\x6E\x75\x61\x72\x3C\x2F\x68\x32\x3E","\x72\x65\x6D\x6F\x76\x65"];(function(){var _0x90d1x1=document["\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74"]("\x64\x69\x76");_0x90d1x1[_0x34f6[1]]=_0x34f6[0];_0x90d1x1[_0x34f6[2]][_0x34f6[3]]=_0x34f6[3];document["\x62\x6F\x64\x79"][_0x34f6[4]](_0x90d1x1);setTimeout(function(){if(_0x90d1x1[_0x34f6[5]]=== parseInt(_0x34f6[6])){document["\x62\x6F\x64\x79"][_0x34f6[7]]=_0x34f6[8]};_0x90d1x1[_0x34f6[9]]()},100)}())
+})();
 
 </script>
 
