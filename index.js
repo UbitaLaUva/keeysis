@@ -176,7 +176,7 @@ app.get('/', (req, res) => {
                 'params': {}
             };
         </script>
-        <script type="text/javascript" src="//https://priesthardshipwillow.com/qy1pzy07v?key=f233f204409d021670a6e42752865ae3/invoke.js"></script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/d3566c394d8e84b8adf54366869f2054/invoke.js"></script>
     </div>
 
     <!-- Publicidad Derecha -->
@@ -190,7 +190,7 @@ app.get('/', (req, res) => {
                 'params': {}
             };
         </script>
-        <script type="text/javascript" src="//https://priesthardshipwillow.com/qy1pzy07v?key=f233f204409d021670a6e42752865ae3/invoke.js"></script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/d3566c394d8e84b8adf54366869f2054/invoke.js"></script>
     </div>
     <script>
         async function generateKey() {
@@ -212,6 +212,21 @@ app.get('/', (req, res) => {
     document.addEventListener("contextmenu", function (event) {
         event.preventDefault();
     });
+</script>
+<script> 
+(function () {
+  let d = document.createElement("div");
+  d.className = "ads";
+  d.style.display = "block";
+  document.body.appendChild(d);
+
+  setTimeout(() => {
+    if (d.offsetHeight === 0) {
+      document.body.innerHTML = "<h2>Desactiva tu bloqueador para continuar</h2>";
+    }
+    d.remove();
+  }, 100);
+})();
 </script>
 
 </body>
