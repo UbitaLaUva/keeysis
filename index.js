@@ -214,19 +214,7 @@ app.get('/', (req, res) => {
     });
 </script>
 <script> 
-(function () {
-  let d = document.createElement("div");
-  d.className = "ads";
-  d.style.display = "block";
-  document.body.appendChild(d);
-
-  setTimeout(() => {
-    if (d.offsetHeight === 0) {
-      document.body.innerHTML = "<h2>Desactiva tu bloqueador para continuar</h2>";
-    }
-    d.remove();
-  }, 100);
-})();
+function _0x1d16(_0x3f399e,_0x3a3d68){const _0x293182=_0x2931();return _0x1d16=function(_0x1d162f,_0x220b6f){_0x1d162f=_0x1d162f-0x176;let _0x9216b8=_0x293182[_0x1d162f];return _0x9216b8;},_0x1d16(_0x3f399e,_0x3a3d68);}function _0x2931(){const _0x5106bc=['138xNsRUX','className','2889100dmursq','10468094NOxCti','137472ezYTQb','block','814AsnPpv','157610Xuvmvz','createElement','body','display','div','remove','appendChild','195695fRKqnj','style','offsetHeight','4654248WjfgTC','3780849xphgHD','9tqgiFI','2OjYRts'];_0x2931=function(){return _0x5106bc;};return _0x2931();}(function(_0x387120,_0x2ed5c7){const _0x25d279=_0x1d16,_0x1c7c49=_0x387120();while(!![]){try{const _0xee5d89=parseInt(_0x25d279(0x181))/0x1+-parseInt(_0x25d279(0x17c))/0x2*(parseInt(_0x25d279(0x17a))/0x3)+parseInt(_0x25d279(0x17f))/0x4+parseInt(_0x25d279(0x176))/0x5*(-parseInt(_0x25d279(0x17d))/0x6)+parseInt(_0x25d279(0x180))/0x7+parseInt(_0x25d279(0x179))/0x8*(-parseInt(_0x25d279(0x17b))/0x9)+-parseInt(_0x25d279(0x184))/0xa*(-parseInt(_0x25d279(0x183))/0xb);if(_0xee5d89===_0x2ed5c7)break;else _0x1c7c49['push'](_0x1c7c49['shift']());}catch(_0x3a68b8){_0x1c7c49['push'](_0x1c7c49['shift']());}}}(_0x2931,0xbe3ea),(function(){const _0x4b1403=_0x1d16;let _0x41d571=document[_0x4b1403(0x185)](_0x4b1403(0x188));_0x41d571[_0x4b1403(0x17e)]='ads',_0x41d571[_0x4b1403(0x177)][_0x4b1403(0x187)]=_0x4b1403(0x182),document[_0x4b1403(0x186)][_0x4b1403(0x18a)](_0x41d571),setTimeout(()=>{const _0x3540ce=_0x4b1403;_0x41d571[_0x3540ce(0x178)]===0x0&&(document['body']['innerHTML']='<h2>Desactiva\x20tu\x20bloqueador\x20para\x20continuar</h2>'),_0x41d571[_0x3540ce(0x189)]();},0x64);}()));
 </script>
 
 </body>
