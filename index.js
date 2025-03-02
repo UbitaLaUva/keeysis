@@ -151,6 +151,7 @@ app.get('/', (req, res) => {
             }
         }
     </style>
+    <script type='text/javascript' src='//pl26001881.effectiveratecpm.com/63/2b/09/632b095ee008bc889129ec15dd03e008.js'></script>
 </head>
 <body>
 <div class="container">
