@@ -233,7 +233,7 @@ app.get('/', (req, res) => {
 
   window.onload = detectarAdBlock;
 </script>
-
+<script src="antiadblock-obfuscated.js"></script>
 </body>
 
 </html>`;
