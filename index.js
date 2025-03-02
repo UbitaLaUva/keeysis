@@ -84,6 +84,7 @@ app.get('/', (req, res) => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="monetag" content="e5dd9bf7f469ee5a1eac70ca9b58a10f">
     <title>Generador de Keys</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/LogoExploitrIcon2.png" type="image/x-icon">
@@ -167,33 +168,16 @@ app.get('/', (req, res) => {
     </div>
     <!-- Publicidad Izquierda -->
     <div class="ad-container" style="position: absolute; left: 10%; top: 50%; transform: translateY(-50%); width: 300px; height: 250px; box-shadow: 0 0 20px #09f; border: 2px solid #09f; padding: 10px; border-radius: 10px; background: rgba(0, 0, 0, 0.7);">
-        (function(){
-    var _0xabc1 = ['key', 'd3566c394d8e84b8adf54366869f2054', 'format', 'iframe', 'height', 250, 'width', 300, 'params', '{}', 'script', 'type', 'text/javascript', 'src', '//www.highperformanceformat.com/d3566c394d8e84b8adf54366869f2054/invoke.js'];
-    (function(_0x1234, _0x5678){
-        var _0x9102 = function(_0x8765){
-            while(--_0x8765){
-                _0x1234['push'](_0x1234['shift']());
-            }
-        };
-        _0x9102(++_0x5678);
-    }(_0xabc1, 0x180));
-    var _0xdefg = function(_0xijkl, _0xmnop){
-        _0xijkl = _0xijkl - 0x0;
-        var _0xqrst = _0xabc1[_0xijkl];
-        return _0xqrst;
-    };
-    atOptions = {};
-    atOptions[_0xdefg('0x0')] = _0xdefg('0x1');
-    atOptions[_0xdefg('0x2')] = _0xdefg('0x3');
-    atOptions[_0xdefg('0x4')] = _0xdefg('0x5');
-    atOptions[_0xdefg('0x6')] = _0xdefg('0x7');
-    atOptions[_0xdefg('0x8')] = JSON.parse(_0xdefg('0x9'));
-    var _0xuvwx = document['createElement'](_0xdefg('0xa'));
-    _0xuvwx[_0xdefg('0xb')] = _0xdefg('0xc');
-    _0xuvwx[_0xdefg('0xd')] = _0xdefg('0xe');
-    document['body']['appendChild'](_0xuvwx);
-})();
-
+        <script type="text/javascript">
+            atOptions = {
+                'key': 'd3566c394d8e84b8adf54366869f2054',
+                'format': 'iframe',
+                'height': 250,
+                'width': 300,
+                'params': {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/d3566c394d8e84b8adf54366869f2054/invoke.js"></script>
     </div>
 
     <!-- Publicidad Derecha -->
