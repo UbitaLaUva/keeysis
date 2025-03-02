@@ -190,10 +190,6 @@ app.get('/', (req, res) => {
         </script>
         <script type="text/javascript" src="//www.highperformanceformat.com/d3566c394d8e84b8adf54366869f2054/invoke.js"></script>
     </div>
-
-
-
-
     <script>
         async function generateKey() {
             const response = await fetch("/generate");
@@ -209,13 +205,13 @@ app.get('/', (req, res) => {
             window.open("https://www.effectiveratecpm.com/qy1pzy07v?key=f233f204409d021670a6e42752865ae3", "_blank");
         }
     </script>
-    <script>
-        <![CDATA[ 
-        /* Place this code snippet near the footer of your page before the close of the /body tag */
-        /* LEGAL NOTICE: The content of this website and all associated program code are protected under the Digital Millennium Copyright Act. Intentionally circumventing this code may constitute a violation of the DMCA.*/
-        const AdblockRegixFinder = { class : [/\[\[\[\[(.*)\]\]\]\]/gm, /\[\[\[(.*)\]\]\]/gm, /\[\[(.*)\]\]/gm], squarebracket : /[\[\]']+/g, settings : /\{\{(.*)\}\}/gm, curlbrackets : /[{}]/g, classfind : (className) => new RegExp('(\\s|^)' + className + '(\\s|$)'), linebreak : /(?:\r\n|\r|\n)/g, whitespace : /\s+/g };                
-        ]]>
-    </script>
+    <script> 
+// Disable right-click
+    document.addEventListener("contextmenu", function (event) {
+        event.preventDefault();
+    });
+</script>
+
 </body>
 
 </html>`;
