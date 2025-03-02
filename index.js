@@ -196,7 +196,6 @@ app.get('/', (req, res) => {
         const response = await fetch("/generate");
         const data = await response.json();
         document.getElementById("key").value = data.key;
-        window.open("https://www.effectiveratecpm.com/qy1pzy07v?key=f233f204409d021670a6e42752865ae3", "_blank");
     }
 
     function copyKey() {
