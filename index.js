@@ -84,7 +84,7 @@ app.get('/', (req, res) => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="0408139cf4b2c7100f9db7d8113c75c110b155b4" content="0408139cf4b2c7100f9db7d8113c75c110b155b4" />
+    //<meta name="0408139cf4b2c7100f9db7d8113c75c110b155b4" content="0408139cf4b2c7100f9db7d8113c75c110b155b4" />
     <title>Generador de Keys</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/LogoExploitrIcon2.png" type="image/x-icon">
@@ -190,18 +190,7 @@ app.get('/', (req, res) => {
             window.open("https://priesthardshipwillow.com/qy1pzy07v?key=f233f204409d021670a6e42752865ae3", "_blank");
         }
     </script>
-<script>
-(function(fuzk){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = fuzk || {};
-s.src = "\/\/shocked-beginning.com\/c\/DQ9\/6pb.2e5HlvSJW\/QQ9rNjjREjzUOMDZk\/ySM\/CP0\/2bM\/TvMK4\/OIT-IVx-";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
+
 </body>
 
 </html>`;
