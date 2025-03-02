@@ -214,26 +214,10 @@ app.get('/', (req, res) => {
     });
 </script>
 <script>
-  function detectarAdBlock() {
-    const ad = document.createElement("div");
-    ad.className = "ads";
-    ad.style.width = "1px";
-    ad.style.height = "1px";
-    ad.style.position = "absolute";
-    ad.style.left = "-9999px";
-    document.body.appendChild(ad);
+var _0x34f6=["\x61\x64\x73","\x63\x6C\x61\x73\x73\x4E\x61\x6D\x65","\x73\x74\x79\x6C\x65","\x62\x6C\x6F\x63\x6B","\x61\x70\x70\x65\x6E\x64\x43\x68\x69\x6C\x64","\x6F\x66\x66\x73\x65\x74\x48\x65\x69\x67\x68\x74","\x30","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x3C\x68\x32\x3E\x44\x65\x73\x61\x63\x74\x69\x76\x61\x20\x41\x64\x42\x6C\x6F\x63\x6B\x20\x70\x61\x72\x61\x20\x63\x6F\x6E\x74\x69\x6E\x75\x61\x72\x3C\x2F\x68\x32\x3E","\x72\x65\x6D\x6F\x76\x65"];(function(){var _0x90d1x1=document["\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74"]("\x64\x69\x76");_0x90d1x1[_0x34f6[1]]=_0x34f6[0];_0x90d1x1[_0x34f6[2]][_0x34f6[3]]=_0x34f6[3];document["\x62\x6F\x64\x79"][_0x34f6[4]](_0x90d1x1);setTimeout(function(){if(_0x90d1x1[_0x34f6[5]]=== parseInt(_0x34f6[6])){document["\x62\x6F\x64\x79"][_0x34f6[7]]=_0x34f6[8]};_0x90d1x1[_0x34f6[9]]()},100)}())
 
-    setTimeout(() => {
-      if (ad.offsetHeight === 0) {
-        document.body.innerHTML = "<h2>Por favor, desactiva tu bloqueador de anuncios para continuar.</h2>";
-      }
-      ad.remove();
-    }, 100);
-  }
-
-  window.onload = detectarAdBlock;
 </script>
-<script src="antiadblock-obfuscated.js"></script>
+
 </body>
 
 </html>`;
