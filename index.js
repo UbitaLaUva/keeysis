@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors({
-    origin: '*',
+    origin: ['https://whitesmoke-bee-726248.hostingersite.com'],
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type']
 }));
@@ -84,7 +84,7 @@ app.get('/', (req, res) => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    //<meta name="0408139cf4b2c7100f9db7d8113c75c110b155b4" content="0408139cf4b2c7100f9db7d8113c75c110b155b4" />
+    <meta name="0408139cf4b2c7100f9db7d8113c75c110b155b4" content="0408139cf4b2c7100f9db7d8113c75c110b155b4" />
     <title>Generador de Keys</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/LogoExploitrIcon2.png" type="image/x-icon">
