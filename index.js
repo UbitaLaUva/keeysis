@@ -154,7 +154,7 @@ app.get('/', (req, res) => {
             
     </style>
     
-    <script type='text/javascript' src='//pl26001881.effectiveratecpm.com/63/2b/09/632b095ee008bc889129ec15dd03e008.js'></script>
+    <script type='text/javascript' src='//priesthardshipwillow.com/63/2b/09/632b095ee008bc889129ec15dd03e008.js'></script>
 </head>
 
 <body>
@@ -204,7 +204,7 @@ app.get('/', (req, res) => {
             keyInput.select();
             document.execCommand("copy");
             alert("Key copiada al portapapeles");
-            window.open("https://www.effectiveratecpm.com/qy1pzy07v?key=f233f204409d021670a6e42752865ae3", "_blank");
+            window.open("https://priesthardshipwillow.com/qy1pzy07v?key=f233f204409d021670a6e42752865ae3", "_blank");
         }
     </script>
     <script> 
