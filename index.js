@@ -167,16 +167,18 @@ app.get('/', (req, res) => {
     </div>
     <!-- Publicidad Izquierda -->
     <div class="ad-container" style="position: absolute; left: 10%; top: 50%; transform: translateY(-50%); width: 300px; height: 250px; box-shadow: 0 0 20px #09f; border: 2px solid #09f; padding: 10px; border-radius: 10px; background: rgba(0, 0, 0, 0.7);">
-        <script type="text/javascript">
-            atOptions = {
-                'key': 'd3566c394d8e84b8adf54366869f2054',
-                'format': 'iframe',
-                'height': 250,
-                'width': 300,
-                'params': {}
-            };
-        </script>
-        <script type="text/javascript" src="//www.highperformanceformat.com/d3566c394d8e84b8adf54366869f2054/invoke.js"></script>
+        <script>
+(function(ekx){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = ekx || {};
+s.src = "\/\/bonyface.com\/bUX.VOsLdGGCl-0PYQWXdNinYPW\/5RuwZbXHIR\/Ve\/mJ9SunZJUtlEkVP\/TgYCwPO\/TyklwRMlziYEtaNdj\/AP5\/OZTEAEzqN\/wa";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
     </div>
 
     <!-- Publicidad Derecha -->
