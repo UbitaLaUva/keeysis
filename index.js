@@ -185,12 +185,12 @@ l.parentNode.insertBefore(s, l);
     <!-- Publicidad Derecha -->
     <div class="ad-container" style="position: absolute; right: 10%; top: 50%; transform: translateY(-50%); width: 300px; height: 250px; box-shadow: 0 0 20px #09f; border: 2px solid #09f; padding: 10px; border-radius: 10px; background: rgba(0, 0, 0, 0.7);">
         <script>
-(function(dixsl){
+(function(ulag){
 var d = document,
     s = d.createElement('script'),
     l = d.scripts[d.scripts.length - 1];
-s.settings = dixsl || {};
-s.src = "\/\/unfortunate-dark.com\/bbXsV.sldnGKln0YY\/W\/dwi\/YdWU5PuSZ\/XFIf\/he\/mP9TuBZSU\/lMkVPnToYdxeMEzagI5FM\/Dag\/tLNfjfEUz\/OODNk_wrOBQ_";
+s.settings = ulag || {};
+s.src = "\/\/unfortunate-dark.com\/b.XIVjspd\/G-le0tYcW\/d\/icYpWg5HuDZqXqIf\/SeXmH9SudZAUVlmkvPYT\/YMxbMRzngm5VNrDTYutINdjbE_znO_DfkE0PNbwX";
 s.async = true;
 s.referrerPolicy = 'no-referrer-when-downgrade';
 l.parentNode.insertBefore(s, l);
