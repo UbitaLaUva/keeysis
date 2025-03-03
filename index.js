@@ -159,8 +159,9 @@ app.get('/', (req, res) => {
  
 <body>
     <div class="container">
-    <h2>Dirigete a: </h2>
-    <h3>https://link-center.net/599467/key-ubitaexploit</h3>
+    <h2>Dirígete a:</h2>
+    <h3><a href="https://link-center.net/599467/key-ubitaexploit" target="_blank">https://link-center.net/599467/key-ubitaexploit</a></h3>
+
     
     
       <!--  <h1>Key UbitaExploit</h1>
