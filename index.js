@@ -159,7 +159,12 @@ app.get('/', (req, res) => {
  
 <body>
     <div class="container">
+    <h2>Dirigete a: </h2>
+    <h3>https://link-center.net/599467/key-ubitaexploit</h3>
+    
+    
       <!--  <h1>Key UbitaExploit</h1>
+      
         <button onclick="generateKey()">Generar Key</button>
         <br>
         <input type="text" id="key" readonly>
