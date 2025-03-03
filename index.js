@@ -159,22 +159,23 @@ app.get('/', (req, res) => {
  
 <body>
     <div class="container">
-        <h1>Key UbitaExploit</h1>
+      <!--  <h1>Key UbitaExploit</h1>
         <button onclick="generateKey()">Generar Key</button>
         <br>
         <input type="text" id="key" readonly>
         <button onclick="copyKey()">Copiar Key</button>
     </div>
-    <!-- Publicidad Izquierda -->
+     Publicidad Izquierda 
     <div class="ad-container" style="position: absolute; left: 10%; top: 50%; transform: translateY(-50%); width: 300px; height: 250px; box-shadow: 0 0 20px #09f; border: 2px solid #09f; padding: 10px; border-radius: 10px; background: rgba(0, 0, 0, 0.7);">
 
     </div>
 
-    <!-- Publicidad Derecha -->
+     Publicidad Derecha 
     <div class="ad-container" style="position: absolute; right: 10%; top: 50%; transform: translateY(-50%); width: 300px; height: 250px; box-shadow: 0 0 20px #09f; border: 2px solid #09f; padding: 10px; border-radius: 10px; background: rgba(0, 0, 0, 0.7);">
 
     
     </div>
+    -->
     <script>
         async function generateKey() {
             const response = await fetch("/generate");
