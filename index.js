@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors({
-    origin: ['https://whitesmoke-bee-726248.hostingersite.com'],
+    origin: ['https://keyubitaexploit.xyz'],
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type']
 }));
